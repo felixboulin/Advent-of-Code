@@ -3,24 +3,20 @@ def main():
 
     with open('input.txt') as f:
         data = f.read().splitlines()
-        # print(data)
 
         score = 0
 
         for battle in data:
             # get battle result core
             score += playBattle(battle)
-            # print('round battle score: ', score)
 
+            # add played move score
             if battle[2] == 'X':
                 score += 1
             elif battle[2] == 'Y':
                 score += 2
             elif battle[2] == 'Z':
                 score += 3
-            # add played move score
-
-            # print('round total score', score)
 
         print('finale score: ', score)
 

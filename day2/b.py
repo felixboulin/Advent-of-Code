@@ -3,7 +3,6 @@ def main():
 
     with open('input.txt') as f:
         data = f.read().splitlines()
-        # print(data)
 
         score = 0
 

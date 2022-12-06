@@ -2,23 +2,21 @@ import re
 
 
 def main():
-
     with open('input.txt') as f:
         data = f.read().splitlines()
         breakPoint = data.index('')
         config = data[0:breakPoint]
         nb_stacks = int((len(config[0])+1) / 4)
         stacks = []
+
         for i in range(nb_stacks):
             position = 1 + i * 4
             stacks.append(list(filter(getStackItems, [c[position]
                                                       for c in config[0:len(config)-1]])))
             stacks[i].reverse()
 
-        # print(stacks)
-
         instructions = data[breakPoint+1:]
-        # print(instructions)
+
         for instruction in instructions:
             instList = re.findall(r'\d+', instruction)
             nb_items = int(instList[0])
@@ -38,13 +36,5 @@ def getStackItems(item):
         return True
 
 
-def test():
-    L = ['a', 'b', 'c']
-    a = L.pop()
-    print(a)
-    print(L)
-
-
 if __name__ == "__main__":
     main()
-    # test()

@@ -7,14 +7,9 @@ def main():
             p1 = pair.split(',')[0].split('-')
             p2 = pair.split(',')[1].split('-')
 
-            # print('p1: ', p1)
-            # print('p2: ', p2)
-
             r1 = range(int(p1[0]), int(p1[1])+1)
-            # print('r1 ', [r for r in r1])
             r1l = [r for r in r1]
             r2 = range(int(p2[0]), int(p2[1])+1)
-            # print('r2 ', [r for r in r2])
             r2l = [r for r in r2]
 
             for e in r1l:
@@ -23,7 +18,6 @@ def main():
                     break
 
         print('count: ', count)
-
 
 if __name__ == "__main__":
     main()
