@@ -14,24 +14,15 @@ def main():
             monkey = [starting_items, operation, divi_check]
             monkeys.append(monkey)
 
-    # print(monkeys)
-
     inspection_counts = [0 for _ in range(len(monkeys))]
-    # print(inspection_counts)
 
     for i in range(20):
         for monkey in monkeys:
-            # print(monkey)
             for item in monkey[0]:
                 inspection_counts[monkeys.index(monkey)] += 1
-                # print('item: ', item)
                 worry_level = monkey[1](item)
-                # print('worry level: ', worry_level)
                 to_monkey = monkey[2](worry_level)
-                # print('to monkey: ', to_monkey)
                 monkeys[to_monkey][0].append(worry_level)
-                # print(
-                #     f"appending {worry_level} to monkey {monkeys[to_monkey]} ans removing {item} from monkey {monkey}")
             monkey[0] = []
 
     inspection_counts.sort(reverse=True)

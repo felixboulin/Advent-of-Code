@@ -12,7 +12,7 @@ Mod operations
 Checking if a number N is divisible by a number x is the same as checking if
 that number N mod(x * z) where z can be any number if in turn divisible by x :
     N % x == 0 <=> (N % (x * z)) % x == 0
-For day11 problem, that means we can reduce the size of the worry level by the product 
+For day11 problem, that means we can reduce the size of the worry level by mod the product 
 of all divisors possible that the monkeys will evaluate.
 
 Short python script to test this:
