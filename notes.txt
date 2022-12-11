@@ -1,0 +1,29 @@
+### Finding common divisors ###
+
+Trick for solution of day 11 part 2.
+
+definition is divisible. 
+    x is divisible by n <=> x % n == 0
+
+Mod operations
+    (x * y) % n == 0 <==> ((x % n) * y) % n == 0
+    (x + y) % n == 0 <==> ((x % n) + a) % n == 0
+
+Checking if a number N is divisible by a number x is the same as checking if
+that number N mod(x * z) where z can be any number if in turn divisible by x :
+    N % x == 0 <=> (N % (x * z)) % x == 0
+For day11 problem, that means we can reduce the size of the worry level by the product 
+of all divisors possible that the monkeys will evaluate.
+
+Short python script to test this:
+        N = 128
+        x = 2
+        y = 12
+        z = 13
+        prod = x * y * z
+        print('N mod prod divi x?', N % prod % x)
+        print('N div x? ', N % x)
+        print('N mod prod divi y?', N % prod % y)
+        print('N div y? ', N % y)
+        print('N mod prod divi z?', N % prod % z)
+        print('N div z? ', N % z)
